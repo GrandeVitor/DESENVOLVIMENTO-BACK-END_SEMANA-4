@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Instrumentos</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #dbeafe, #eff6ff);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            background: white;
+            width: 100%;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        h2 {
+            color: #1e3a8a;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .tabela {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 25px;
+        }
+
+        .tabela th {
+            background: #2563eb;
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .tabela td {
+            padding: 14px 15px;
+            border-bottom: 1px solid #e2e8f0;
+            color: #334155;
+        }
+
+        .tabela tr:hover {
+            background: #eff6ff;
+        }
+
+        .voltar {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .voltar:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .adicionar {
+            display: inline-block;
+            background: #16a34a;
+            color: white;
+            text-decoration: none;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+            margin-right: 10px;
+     }
+
+        .adicionar:hover {
+            background: #15803d;
+            transform: translateY(-2px);
+        }
+        .vazio {
+            text-align: center;
+            color: #64748b;
+            padding: 25px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px 12px;
+            }
+
+            .tabela th,
+            .tabela td {
+                padding: 10px 6px;
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Lista de Instrumentos</h2>
+
+        <table class="tabela">
+
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Fabricante</th>
+                    <th>Preço</th>
+                    <th>Tipo</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <% instrumentos.forEach(i => { %>
+
+                    <tr>
+                        <td><%= i.nome %></td>
+                        <td><%= i.fabricante %></td>
+                        <td>R$ <%= Number(i.preco).toFixed(2) %></td>
+                        <td><%= i.tipo %></td>
+                    </tr>
+
+                <% }) %>
+
+                <% if (instrumentos.length === 0) { %>
+                    <tr>
+                        <td colspan="4" class="vazio">
+                            Nenhum instrumento cadastrado.
+                        </td>
+                    </tr>
+                <% } %>
+
+            </tbody>
+
+        </table>
+
+        <a href="/instrumento/add" class="voltar">Adicionar Novo Instrumento</a>
+        <a href="/" class="voltar">Voltar para o início</a>
+
+    </div>
+
+</body>
+</html>

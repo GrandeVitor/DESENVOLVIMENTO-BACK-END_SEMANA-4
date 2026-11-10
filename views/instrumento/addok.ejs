@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instrumento Adicionado</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #dbeafe, #eff6ff);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: white;
+            width: 90%;
+            max-width: 500px;
+            padding: 45px 35px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .icone {
+            font-size: 55px;
+            color: #16a34a;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            color: #1e3a8a;
+            margin-bottom: 25px;
+        }
+
+        .nome {
+            color: #2563eb;
+        }
+
+        a {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 13px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="icone">✓</div>
+
+        <h2>
+            Instrumento 
+            <span class="nome">"<%= nome %>"</span>
+            adicionado com sucesso!
+        </h2>
+
+        <a href="/instrumento/lst">Voltar para lista</a>
+
+    </div>
+
+</body>
+</html>
